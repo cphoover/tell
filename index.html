@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link id="bootstrap" href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/spacelab/bootstrap.min.css" rel="stylesheet">
+        <link href="tell.css" rel="stylesheet" type="text/css" />
+        <style>.demo a{margin-top:15px;}</style>
+    </head>
+    <body>
+        <div class="container" style="position:relative; width:940px;">
+            <h1>Tell.js</h1>
+            <h3>a bootstraped reboot of apprise.js</h3>
+
+
+            <p>Basically when looking for alternatives to native javascript alerts/prompts I came across <a href="http://thrivingkings.com/read/Apprise-The-attractive-alert-alternative-for-jQuery">Apprise.js</a> by  <a href="https://github.com/ThrivingKings">ThrivingKings</a>. I really liked the way it looked and functioned, but when I wanted to extend it I realized all of the logic was all in one function. So I restructured the code, and switched the styles to use twitter bootstrap.</p>
+
+            <h3>Bootswatch</h3>
+            <p> Tell.js also works with any bootswatch theme. You can demo this by changing the stylesheet below:<br>
+            <select id="style-switcher">
+                <option value="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">Default</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/amelia/bootstrap.min.css">Amelia</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/cerulean/bootstrap.min.css">Cerulean</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/cosmo/bootstrap.min.css">Cosmo</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/cyborg/bootstrap.min.css">Cyborg</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/journal/bootstrap.min.css">Journal</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/readable/bootstrap.min.css">Readable</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/simplex/bootstrap.min.css">Simplex</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/slate/bootstrap.min.css">Slate</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/spacelab/bootstrap.min.css" selected>Spacelab</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/spruce/bootstrap.min.css">Spruce</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/superhero/bootstrap.min.css">Superhero</option>
+                <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/united/bootstrap.min.css">United</option>
+            </select>
+            </p>
+
+            <div class="demo">
+                <h2>Demo: </h2>
+                    <a class="tell btn" href="#"  onclick="tellDemo('Hello')">tell('Hello');</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo('Hello?', {'confirm':true});">tell('Hello?', {'confirm':true});</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo('Hello now?', {'verify':true});">tell('Hello now?', {'verify':true});</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo('How about now?', {'verify':true, 'textYes':'Yes already!', 'textNo':'No, not yet'});">tell('How about now?', {'verify':true, 'textYes':'Yes already!', 'textNo':'No, not yet'});</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo('Hello', {'animate':true});">tell('Hello', {'animate':true});</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo('What\'s your name?', {'input':true});">tell('What's your name?', {'input':true});</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo('Verify your name', {'input':'Jack Jones', 'textOk':'Correct'});">tell('Verify your name', {'input':'Jack Jones', 'textOk':'Correct'});</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor diam, lobortis eu volutpat in, accumsan vel massa. Curabitur justo mauris, tempus ut feugiat nec, pellentesque et felis. Proin aliquam varius mi a ultrices. Nam purus tellus, posuere hendrerit tristique at, blandit eu tellus. Curabitur egestas diam at nunc volutpat rhoncus. Cras elementum, magna id tristique porta, justo leo ultrices nisl, et rhoncus magna odio id purus. Aenean pretium augue ut metus congue sed lobortis urna varius. Duis augue diam, posuere sit amet viverra vel, facilisis ac odio. Vestibulum nisi orci, luctus vitae luctus eget, lacinia ut dui. Ut imperdiet, enim nec mattis laoreet, tellus elit bibendum elit, non imperdiet enim mauris eu risus. Curabitur faucibus urna sed turpis tincidunt pulvinar. Etiam tristique nisl eu nibh sodales at convallis mi mattis. Fusce imperdiet posuere lorem quis vulputate. Ut in leo in lorem fermentum hendrerit quis vitae velit. Phasellus tristique mi ac neque tempus sollicitudin. In nec interdum enim. Fusce id magna et ipsum lobortis cursus. Nunc eleifend volutpat elit, a adipiscing tellus posuere et. Phasellus id mauris ante, vehicula suscipit leo.');">tell('Lorem ipsum...');</a><br>
+            </div>
+        <br>
+        <hr>
+        <div id="footer">
+            <p>
+                Tell is made by <a href="http://github.com/cphoover">cphoover</a> and is based upon <a href="http://thrivingkings.com/read/Apprise-The-attractive-alert-alternative-for-jQuery">Apprise.js</a> by  <a href="https://github.com/ThrivingKings">ThrivingKings</a> . Contact him <a href="mailto:hello@thomaspark.me">hello@thomaspark.me</a>.<br>
+                Code licensed under the <a href="http://opensource.org/licenses/MIT">The MIT License (MIT)</a>.
+            </p>
+        </div>  
+
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="tell.js"></script>
+        <script>
+            function tellDemo(){
+                var args = Array.prototype.slice.call(arguments);
+                args.push(function(result){console.log(result);});
+                tell.apply(window, args);
+            }
+            
+            $('#style-switcher').on('change', function(){
+                $('#bootstrap').attr('href', $(this).val());
+            });
+        </script>
+    </body>
+</html>
