@@ -1,0 +1,28 @@
+.tellOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.tellOuter {
+    width:auto;
+    max-width:600px;
+    margin-left:inherit;
+    position: fixed;
+    display: none;
+    min-width:200px;
+    min-height:50px;
+}
+
+.aButtons{margin-top:5px;}
+.tellInner button{
+    margin-right:8px;
+}
+.no-rgba  .tellOverlay {
+    opacity: .30;
+    filter: alpha(opacity = 30) !important;
+    background: #000;
+    zoom: 1;
+}
