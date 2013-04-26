@@ -5,35 +5,4 @@ a bootstrapped reboot of apprise.js
 
 checkout the demo here: http://cphoover.github.io/tell/
 
-----------------------------------------------------------------------------------------------------
-|    Dev    |  Yesterday Work  | Yesterday Blockers |        Today Work         |  Today Blockers  |
-----------------------------------------------------------------------------------------------------
-| Tim       | Pitch Some NCMF  | None               | Pitch and NCMF            | None             |
-----------------------------------------------------------------------------------------------------
-| Chip      | S2C2             | None               | New G2 standalone primer. | None             |
-|           |                  |                    | S2C2 Png Compression.     |                  |
-|           |                  |                    | Meeting 2:00-2:30         |                  |
-|           |                  |                    | leaving early             |                  |
-----------------------------------------------------------------------------------------------------
-| Judy      | KWALL meetings   | None               | KWALL CODING              | Patrick Missing? |
-----------------------------------------------------------------------------------------------------
-| Jeff      | Unproductive.    | No tasking         | Newsletter. KWALL         | Needs HELP!      |
-|           |                  | Where is tasking?  |                           |                  |
-----------------------------------------------------------------------------------------------------
-| Chris     | KWALL Meetings   | None               | KWALL.                    | None             |
-|           |                  |                    | Flush out tasking         |                  |
-|           |                  |                    | look into JS include      |                  |
-|           |                  |                    | look at head.js           |                  |
-----------------------------------------------------------------------------------------------------
-| Bridgette | all Q            | bug                | More Q                    | What is SID CT   |
-|           |                  |                    | fix bug!                  | standing?        |
-----------------------------------------------------------------------------------------------------
-| Aaron     | Traning, S2C2    | None               | Training, S2C2            | None             |
-----------------------------------------------------------------------------------------------------
-| Charlie   | Pitch Refactor   | None               | Pitch Refactor            | None             |
-|           | JS Node & Client |                    | JS Node & Client          |                  |
-----------------------------------------------------------------------------------------------------
-| Patrick   | n/a              | n/a                | n/a                       | n/a              |
-----------------------------------------------------------------------------------------------------
-| April     | n/a              | n/a                | n/a                       | n/a              |
-----------------------------------------------------------------------------------------------------
+<table><tbody><tr><th>Dev</th><th>Yesterday Work</th><th>Yesterday Blockers</th><th>Today Work</th><th>Today Blockers</th></tr><tr><td>Tim</td><td>Pitch Some NCMF</td><td>None</td><td>Pitch and NCMF</td><td>None</td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Chip</td><td>S2C2</td><td>None</td><td>New G2 standalone primer.</td><td>None</td></tr><tr><td> </td><td> </td><td> </td><td>S2C2 Png Compression.</td><td> </td></tr><tr><td> </td><td> </td><td> </td><td>Meeting 2:00-2:30</td><td> </td></tr><tr><td> </td><td> </td><td> </td><td>leaving early</td><td> </td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Judy</td><td>KWALL meetings</td><td>None</td><td>KWALL CODING</td><td>Patrick Missing?</td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Jeff</td><td>Unproductive.</td><td>No tasking</td><td>Newsletter. KWALL</td><td>Needs HELP!</td></tr><tr><td> </td><td> </td><td>Where is tasking?</td><td> </td><td> </td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Chris</td><td>KWALL Meetings</td><td>None</td><td>KWALL.</td><td>None</td></tr><tr><td> </td><td> </td><td> </td><td>Flush out tasking</td><td> </td></tr><tr><td> </td><td> </td><td> </td><td>look into JS include</td><td> </td></tr><tr><td> </td><td> </td><td> </td><td>look at head.js</td><td> </td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Bridgette</td><td>all Q</td><td>bug</td><td>More Q</td><td>What is SID CT</td></tr><tr><td> </td><td> </td><td> </td><td>fix bug!</td><td>standing?</td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Aaron</td><td>Traning, S2C2</td><td>None</td><td>Training, S2C2</td><td>None</td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Charlie</td><td>Pitch Refactor</td><td>None</td><td>Pitch Refactor</td><td>None</td></tr><tr><td> </td><td>JS Node &amp; Client</td><td> </td><td>JS Node &amp; Client</td><td> </td></tr><tr><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr><tr><td>Patrick</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>April</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr></tbody></table>
