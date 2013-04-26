@@ -43,6 +43,7 @@
                     <a class="tell btn" href="#"  onclick="tellDemo('Verify your name', {'input':'Jack Jones', 'textOk':'Correct'});">tell('Verify your name', {'input':'Jack Jones', 'textOk':'Correct'});</a><br>
                     <a class="tell btn" href="#"  onclick="tellDemo('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor diam, lobortis eu volutpat in, accumsan vel massa. Curabitur justo mauris, tempus ut feugiat nec, pellentesque et felis. Proin aliquam varius mi a ultrices. Nam purus tellus, posuere hendrerit tristique at, blandit eu tellus. Curabitur egestas diam at nunc volutpat rhoncus. Cras elementum, magna id tristique porta, justo leo ultrices nisl, et rhoncus magna odio id purus. Aenean pretium augue ut metus congue sed lobortis urna varius. Duis augue diam, posuere sit amet viverra vel, facilisis ac odio. Vestibulum nisi orci, luctus vitae luctus eget, lacinia ut dui. Ut imperdiet, enim nec mattis laoreet, tellus elit bibendum elit, non imperdiet enim mauris eu risus. Curabitur faucibus urna sed turpis tincidunt pulvinar. Etiam tristique nisl eu nibh sodales at convallis mi mattis. Fusce imperdiet posuere lorem quis vulputate. Ut in leo in lorem fermentum hendrerit quis vitae velit. Phasellus tristique mi ac neque tempus sollicitudin. In nec interdum enim. Fusce id magna et ipsum lobortis cursus. Nunc eleifend volutpat elit, a adipiscing tellus posuere et. Phasellus id mauris ante, vehicula suscipit leo.');">tell('Lorem ipsum...');</a><br>
             </div>
+<<<<<<< HEAD
         <br>
         <hr>
         <div id="footer">
@@ -54,6 +55,28 @@
 
         </div>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+=======
+            <br>
+            <h3> Animate2 Compatibility </h3>
+            <p> Tell.js is also made to work with <a href="https://github.com/cphoover/animate2" >animate2</a>, my css3 transition animation library.
+                animate2 uses css transitions instead of changing the style properties of an
+                element on a set interval like the jquery animate function, and falls back to 
+                jquery animate if the browser doesn't support css3 transitons. Tell.js will use
+                the default $.fn.animate function if animate2 is not available.</p>
+            <br>
+            <hr>
+            <div id="footer">
+                <p>
+                    Tell is made by <a href="http://github.com/cphoover">cphoover</a> and is based upon <a href="http://thrivingkings.com/read/Apprise-The-attractive-alert-alternative-for-jQuery">Apprise.js</a> by  <a href="https://github.com/ThrivingKings">ThrivingKings</a> .<br>
+                    Code licensed under the <a href="http://opensource.org/licenses/MIT">The MIT License (MIT)</a>.
+                </p>
+            </div>  
+            
+
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="/vendors/animate2.js"></script>    
+>>>>>>> gh-pages
         <script src="tell.js"></script>
         <script>
             function tellDemo(){
@@ -66,5 +89,9 @@
                 $('#bootstrap').attr('href', $(this).val());
             });
         </script>
+<<<<<<< HEAD
+=======
+        <!-- charlie was here -->
+>>>>>>> gh-pages
     </body>
 </html>
