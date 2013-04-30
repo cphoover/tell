@@ -5,15 +5,20 @@ var Tell = {
     args          : {},
 
     default_args  : {
-        confirm    : false,
-        verify     : false,
-        input      : false,
-        animate    : false,
-        textOk     : "Ok",
-        textCancel : "Cancel",
-        textYes    : "Yes",
-        textNo     : "No",
-        position   : "center"
+        confirm     : false,
+        verify      : false,
+        input       : false,
+        animate     : false,
+        textOk      : "Ok",
+        textCancel  : "Cancel",
+        textYes     : "Yes",
+        textNo      : "No",
+        position    : "center",
+        showButtons : true,
+        keyClose    : true,
+        onClose     : false,
+        onOk        : false, 
+        onCancel    : false
     },
 
     userInput : null,
@@ -31,7 +36,10 @@ var Tell = {
         Tell.setupContainers();
         Tell.addContents(_string);
         Tell.addInputFields();
-        Tell.addButtons();
+        //if showButtons is true;
+        if(Tell.args.showButtons){
+            Tell.addButtons();
+        }
         Tell.showOverlay();
         Tell.showModal();
         Tell.addHandlers();
@@ -74,10 +82,13 @@ var Tell = {
         document.body.appendChild(Tell.containers.overlay);
         //lazy init of jquery object...
         Tell.containers.jqOverlay = $(Tell.containers.overlay);
-        Tell.containers.jqOverlay
-            .fadeIn(100, function () {
-                $(this).css("filter", "alpha(opacity=70)");
-         });
+
+        setTimeout(function(){
+            Tell.containers.jqOverlay.animate2({opacity:1}, function () {
+                  $(this).css("filter", "alpha(opacity=70)");
+            }, 50); 
+        },0);
+
     },
 
     addContents : function(_string){
@@ -203,19 +214,54 @@ var Tell = {
             
     },
 
+    ok : function(){
+        "use strict";
+        if ("function"  === typeof Tell.args.onOk){
+            Tell.args.onOk();
+        }
+        if (Tell.args.input) {
+            Tell.close();
+            Tell.callback(Tell.userInput);
+        } else {
+            Tell.close();
+            Tell.callback(true);
+        }
+    },
 
+    cancel : function(){
+        "use strict";
+        if("function"  === typeof Tell.args.onCancel){
+            Tell.args.onCancel();
+        }
+        Tell.close();
+        Tell.callback(false); 
+    },
+
+    close : function(){
+       "use strict";
+       if("function"  === typeof Tell.args.onClose){
+           Tell.args.onClose();
+       }
+       document.body.removeChild(Tell.containers.overlay);
+       document.body.removeChild(Tell.containers.tell);
+    },
+    
     addHandlers : function(){
         "use strict";
 
         // triggers a ok click on enter and an cancel on escape
+        //
         $(document).keydown(function (e) {
-            if (Tell.containers.jqOverlay.is(':visible')) {
-                if (e.keyCode === 13) { //enter key
-                    $('.aButtons > button[value="ok"]').click(); 
-                } else if (e.keyCode === 27) { //escape key
-                    $('.aButtons > button[value="cancel"]').click(); 
-                }
-            }
+          if(!Tell.args.keyClose){
+            return true; //return true so it still propogates
+          }
+          if (Tell.containers.jqOverlay.is(':visible')) {
+              if (e.keyCode === 13) { //enter key
+                  Tell.ok();
+              } else if (e.keyCode === 27) { //escape key
+                  Tell.cancel();
+              }
+          }
         });
 
 
@@ -227,19 +273,13 @@ var Tell = {
 
         //attach click handler to clicking on buttons
         $('.aButtons > button').click(function () {
-            document.body.removeChild(Tell.containers.overlay);
-            document.body.removeChild(Tell.containers.tell);
 
             var wButton = $(this).attr("value");
 
             if (wButton === 'ok') {
-                if (Tell.args.input) {
-                    Tell.callback(Tell.userInput);
-                } else {
-                    Tell.callback(true); 
-                }
+                Tell.ok();
             } else if (wButton === 'cancel') {
-                Tell.callback(false); 
+                Tell.cancel();
             }
             
         });
