@@ -3,6 +3,7 @@
     <head>
         <link id="bootstrap" href="//netdna.bootstrapcdn.com/bootswatch/2.3.1/spacelab/bootstrap.min.css" rel="stylesheet">
         <link href="tell.css" rel="stylesheet" type="text/css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
         <style>.demo a{margin-top:15px;}</style>
     </head>
     <body>
@@ -31,7 +32,62 @@
                 <option value="//netdna.bootstrapcdn.com/bootswatch/2.3.1/united/bootstrap.min.css">United</option>
             </select>
             </p>
-
+<style>
+    .choices-wrapper{text-align:center;}
+    .tellInner .btn-group{
+        margin: 0px auto;
+        height: auto;
+        display: inline-block;
+    }
+    .tellInner .btn-group .btn{
+        text-align:left;
+    }
+</style>
+            <script type="text/html" id="login-template"
+                <div id="content">
+                    <h2>Login</h2>
+                    <form action="/admin/users/login" id="UserLoginForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"></div>    <div class="input text required">
+                            <label for="UserUsername">Username</label>
+                            <div class="input-append">
+                                <input name="username" maxlength="255" type="text" id="username" placeholder="Enter Username...">
+                                    <span class="add-on">
+                                        <i class="icon-user" style="line-height:133%;"></i>
+                                    </span>
+                            </div>
+                        </div>
+                        <div class="input password required">
+                            <label for="UserPassword">Password</label>
+                                <div class="input-append">
+                                <input name="password" maxlength="255" type="password" id="password" placeholder="Enter Password...">
+                                    <span class="add-on">
+                                        <i class="icon-key" style="line-height:133%;"></i>
+                                    </span>
+                            </div>
+                        </div>
+                    <strong>- Or -</strong><br><br>
+                    <div class="input password required">
+                            <label for="UserPassword">Guest Password</label>
+                                <div class="input-append">
+                                <input name="guest-password" maxlength="255" type="password" id="guest-password" placeholder="Enter Guest Password...">
+                                    <span class="add-on">
+                                        <i class="icon-key" style="line-height:133%;"></i>
+                                    </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </script>
+            <script type="text/html" id="choices-template">
+                <div class="choices-wrapper">
+                    Select Your Choice:
+                    <br><br>
+                    <div class="btn-group btn-group-vertical">
+                    <a class="btn" data-value="1" >&raquo;&nbsp; Choice  1</a>
+                    <a class="btn" data-value="2" >&raquo;&nbsp;  Choice 2</a>
+                    <a class="btn" data-value="3" >&raquo;&nbsp;  Choice 3</a>
+                    </div>
+                </div>
+            </script>
             <div class="demo">
                 <h2>Demo: </h2>
                     <a class="tell btn" href="#"  onclick="tellDemo('Hello')">tell('Hello');</a><br>
@@ -42,6 +98,8 @@
                     <a class="tell btn" href="#"  onclick="tellDemo('What\'s your name?', {'input':true});">tell('What's your name?', {'input':true});</a><br>
                     <a class="tell btn" href="#"  onclick="tellDemo('Verify your name', {'input':'Jack Jones', 'textOk':'Correct'});">tell('Verify your name', {'input':'Jack Jones', 'textOk':'Correct'});</a><br>
                     <a class="tell btn" href="#"  onclick="tellDemo('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dolor diam, lobortis eu volutpat in, accumsan vel massa. Curabitur justo mauris, tempus ut feugiat nec, pellentesque et felis. Proin aliquam varius mi a ultrices. Nam purus tellus, posuere hendrerit tristique at, blandit eu tellus. Curabitur egestas diam at nunc volutpat rhoncus. Cras elementum, magna id tristique porta, justo leo ultrices nisl, et rhoncus magna odio id purus. Aenean pretium augue ut metus congue sed lobortis urna varius. Duis augue diam, posuere sit amet viverra vel, facilisis ac odio. Vestibulum nisi orci, luctus vitae luctus eget, lacinia ut dui. Ut imperdiet, enim nec mattis laoreet, tellus elit bibendum elit, non imperdiet enim mauris eu risus. Curabitur faucibus urna sed turpis tincidunt pulvinar. Etiam tristique nisl eu nibh sodales at convallis mi mattis. Fusce imperdiet posuere lorem quis vulputate. Ut in leo in lorem fermentum hendrerit quis vitae velit. Phasellus tristique mi ac neque tempus sollicitudin. In nec interdum enim. Fusce id magna et ipsum lobortis cursus. Nunc eleifend volutpat elit, a adipiscing tellus posuere et. Phasellus id mauris ante, vehicula suscipit leo.');">tell('Lorem ipsum...');</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo(document.getElementById('choices-template').innerHTML, {keyClose:false, showButtons:false});">tell(document.getElementById('choices-template').innerHTML, {keyClose:false, showButtons:false});</a><br>
+                    <a class="tell btn" href="#"  onclick="tellDemo(document.getElementById('login-template').innerHTML, {'verify':true, 'textYes':'Login', 'textNo':'Cancel', onOk: logIn});">tell(document.getElementById('login-template').innerHTML, {'verify':true, 'textYes':'Login', 'textNo':'Cancel', onOk: logIn});</a><br>
             </div>
             <br>
             <h3> Animate2 Compatibility </h3>
@@ -70,9 +128,29 @@
                 args.push(function(result){console.log(result);});
                 tell.apply(window, args);
             }
+        
+            function logIn(){
+
+                var guestPass = $('#guest-password').val()
+                var user = { 
+                    name      : $('#username').val(),
+                    pass      : $('#password').val(),
+                };
+
+                if(user.name === ''){
+                    user.name = 'guest';
+                    user.pass = guestPass;
+                }
+                setTimeout(function(){tell('You have logged in as '+ user.name +'!') ;}, 0);
+            }
             
             $('#style-switcher').on('change', function(){
                 $('#bootstrap').attr('href', $(this).val());
+            });
+        
+            $('body').on('click', '.tellOuter .btn-group .btn', function(){
+                console.log($(this).attr('data-value'));
+                Tell.close();
             });
         </script>
         <!-- charlie was here -->
