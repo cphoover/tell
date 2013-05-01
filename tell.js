@@ -23,7 +23,7 @@ var Tell = {
 
     userInput : null,
 
-    callback : null,
+    callback : false,
 
     init : function(_string, _args, _callback){
         "use strict";
@@ -221,10 +221,14 @@ var Tell = {
         }
         if (Tell.args.input) {
             Tell.close();
-            Tell.callback(Tell.userInput);
+            if("function" === typeof Tell.callback){
+                Tell.callback(Tell.userInput);
+            }
         } else {
             Tell.close();
-            Tell.callback(true);
+            if("function" === typeof Tell.callback){
+                Tell.callback(true);
+            }
         }
     },
 
@@ -234,7 +238,9 @@ var Tell = {
             Tell.args.onCancel();
         }
         Tell.close();
-        Tell.callback(false); 
+        if("function" === typeof Tell.callback){
+            Tell.callback(false); 
+        }
     },
 
     close : function(){

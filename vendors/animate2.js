@@ -67,7 +67,6 @@
 
                 if ($.isFunction(callback)) {
                     object.bind(transitionEnd,function(e){
-                         console.log(e);
                          object.unbind(transitionEnd);
                          setTimeout(callback, 0);
                          callback = null;
